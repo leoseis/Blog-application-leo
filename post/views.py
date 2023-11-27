@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from .models import Post
 
 
 def index (request):
-    return render (request, 'index.html')
+    posts = Post.objects.all()
+    return render (request, 'index.html',{'posts': posts})             #the posts dictionary is being ingested in the index.html
+
+
+def post(request, pk):
+    posts = Post.objects.get(id=pk)
+    return render (request, 'posts.html',{'posts':posts})

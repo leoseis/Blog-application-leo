@@ -10,14 +10,14 @@
 body {
   font-family: Arial;
   padding: 20px;
-  background: #f1f1f1;
+  background: #8a3636;
 }
 
 .header {
   padding: 2px;
   font-size: 40px;
   text-align: center;
-  background: white;
+  background: rgb(197, 121, 121);
 }
 
 .leftcolumn {   
@@ -26,7 +26,7 @@ body {
 }
 
 .card {
-   background-color: white;
+   background-color: rgb(240, 233, 233);
    padding: 20px;
    margin-top: 20px;
 }
@@ -48,20 +48,16 @@ body {
 <body>
 
 <div class="header">
-  <h2>EBO's Blog</h2>
+  <h2>Ebos's Blog</h2>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
-    {% for post in posts reversed %}
     <div class="card">
-      <a style="text-decoration: none; color: black;" href="/post/{{post.id}}">
-        <h2>{{post.title}}</h2>
-        <h5>{{post.created_at}}</h5>
-        <p>{{post.body|truncatewords:20}}</p>
-      </a>
+        <h2>{{posts.title}}</h2>
+        <h5>{{posts.created_at}}</h5>
+        <p>{{posts.body}}</p>
     </div>
-    {% endfor %}
   </div>
 </div>
 
